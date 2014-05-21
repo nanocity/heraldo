@@ -1,0 +1,23 @@
+%h5
+  %strong
+    Army list
+  %small.pull-right.top-padded
+    = "#{t( 'mongoid.attributes.army.last_update' ).capitalize}:"
+    = I18n.l subscription.army.updated_at, format: :short
+= form_for subscription.army, html: { class: 'form-horizontal hide army-form', role: 'form' } do |form|
+  .form-group
+    = form.text_area :list, class: 'form-control', placeholder: t( 'mongoid.attributes.army.list' ).capitalize, rows: 10
+  .form-group
+    = form.button type: :submit, class: 'btn btn-sm btn-primary' do
+      %i.icon-upload
+      = t( 'actions.save' )
+    = link_to '#', class: 'btn btn-sm btn-default army-cancel' do
+      %i.icon-remove
+      = t( 'actions.cancel' )
+
+.army-list-container
+  .army-list
+    = markdown( subscription.army.list )
+  = link_to '#', class: 'btn btn-sm btn-primary army-edit' do
+    %i.icon-pencil
+    = t( 'actions.edit' )

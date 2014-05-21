@@ -1,0 +1,32 @@
+.panel.panel-default
+  .panel-heading
+    %i.icon-flag.icon-large
+    = t( 'heraldo.tournaments_box.panel_heading' )
+
+    = link_to new_tournament_path, class: 'btn btn-xs btn-warning pull-right' do
+      %i.icon-plus
+      = t( 'actions.create' )
+
+  %ul.list-group
+    - tournaments.each do |tournament|
+      = link_to tournament_path( tournament ) do
+        %li.list-group-item
+          %span.ellipsed
+            = tournament.title
+          %span.pull-right
+            = "(#{tournament.subscriptions.count}/#{tournament.max_users})"
+
+
+.panel.panel-default
+  .panel-heading
+    %i.icon-trophy.icon-large
+    = t( 'heraldo.subscriptions_box.panel_heading' )
+
+  %ul.list-group
+    - subscriptions.each do |subscription|
+      = link_to tournament_path( subscription.tournament ) do
+        %li.list-group-item
+          %span.ellipsed
+            = subscription.tournament.title
+          %span.pull-right
+            = subscription_label( subscription.status )

@@ -1,0 +1,59 @@
+.row
+  .col-md-12
+    = form_for @tournament, html: { class: 'form-horizontal', role: 'form' } do |form|
+      = form.error_messages
+
+      .row.bottom-margined
+        .col-md-3
+          %span#img-selector-img.img-selector-container
+            %img.img-thumbnail{ src: form.object.poster.exists? ? form.object.poster.url : nil }
+            %span.img-selector-remove-container.pull-right
+              %i#img-selector-remove.icon-trash.icon-large
+          %span#img-selector-empty.img-thumbnail.img-selector-container
+            .img-selector-empty
+              %i.icon-plus
+              = t( 'actions.add_poster' )
+
+          .form-group
+            = form.file_field :poster, class: 'form-control', placeholder: t( 'mongoid.attributes.tournament.poster' ).capitalize
+            = form.hidden_field :remove_poster, value: 'false'
+
+        .col-md-4
+          .form-group
+            = form.text_field :title, class: 'form-control', placeholder: t( 'mongoid.attributes.tournament.title' ).capitalize
+
+          .form-group
+            = form.text_area :description, class: 'form-control', placeholder: t( 'mongoid.attributes.tournament.description' ).capitalize, rows: 5
+
+          .form-group
+            .input-group
+              = form.text_field :sign_up_date, class: 'form-control datepicker', readonly: true, placeholder: t( 'mongoid.attributes.tournament.sign_up_date' ).capitalize
+              .input-group-addon
+                %i.icon-calendar
+
+          .form-group
+            .input-group
+              = form.text_field :date, class: 'form-control datepicker', readonly: true, placeholder: t( 'mongoid.attributes.tournament.date' ).capitalize
+              .input-group-addon
+                %i.icon-calendar
+
+          .form-group
+            = form.text_field :address, class: 'form-control', placeholder: t( 'mongoid.attributes.tournament.address' ).capitalize
+
+          .form-group
+            = form.text_field :web, class: 'form-control', placeholder: t( 'mongoid.attributes.tournament.web' ).capitalize
+
+          .form-group
+            = form.text_field :max_users, class: 'form-control', type: 'number', min: 2, placeholder: t( 'mongoid.attributes.tournament.max_users' ).capitalize
+
+        .col-md-5
+
+      .row.bottom-margined
+        .col-md-offset-2.col-md-10
+          .form-group
+            = link_to tournaments_path, class: 'btn btn-small btn-default' do
+              %i.icon-cancel-white
+              = t( 'actions.cancel' )
+
+            = form.submit class: 'btn btn-small btn-primary'
+

@@ -1,0 +1,13 @@
+%tr{ class: current_user.subscriptions.include?( subscription ) ? 'success' : '' }
+  %td
+    %strong
+      = "##{subscription.identifier}"
+  %td
+    = image_tag subscription.user.avatar, class: 'img-rounded img-mini'
+  %td
+    = subscription.user.name
+  %td
+    = I18n.l subscription.created_at, format: :condensed
+  %td
+    %h4
+      = subscription_label( subscription.status )

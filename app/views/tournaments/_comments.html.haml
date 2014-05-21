@@ -1,0 +1,23 @@
+%h5
+  %strong
+    Comments
+
+- subscription.comments.each_with_index do |comment, index|
+  .blockquote-box.clearfix.right-bordered
+    .square.right-margined.pull-left
+      = image_tag comment.user.avatar, class: 'img-rounded'
+
+    = link_to comment.user.name, user_path( comment.user )
+    %small.subtle
+      = time_ago_in_words( comment.created_at )
+    %p
+      = comment.content
+
+%hr
+= form_for subscription.comments.new, html: { class: 'form-horizontal', role: 'form' } do |form|
+  .form-group
+    = form.text_area :content, class: 'form-control', placeholder: t( 'mongoid.attributes.comment.content' ).capitalize, rows: 3
+  .form-group
+    = form.button type: :submit, class: 'btn btn-sm btn-primary' do
+      %i.icon-upload
+      = t( 'actions.save' )

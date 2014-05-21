@@ -1,0 +1,134 @@
+.nav > li.login-icon > a {
+  padding: 10px 0px;
+}
+
+.bottom-margined {
+  margin-bottom: 15px;
+}
+
+.top-padded {
+  padding-top: 5px;
+}
+
+.ellipsed {
+  display: inline-block;
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.datepicker {
+  padding: 6px 12px;
+}
+
+.inline {
+  display: inline;
+}
+
+.img-mini {
+  width: 24px;
+}
+
+table.vertical-aligned > tbody > tr > td {
+  vertical-align: middle;
+}
+
+// Navbar
+.search-form{
+  width: 350px;
+}
+
+
+h2.tournament-header{
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+// Image selector
+.img-selector-container {
+  width: 100%;
+  height: 300px;
+  cursor: pointer;
+}
+
+.img-selector-empty {
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  text-align: center;
+  line-height: 300px;
+}
+
+.img-selector-remove-container {
+  position: relative;
+  top: -30px;
+  padding-right: 10px;
+  z-index: 1;
+}
+
+input[type=file] {
+  display: none;
+}
+
+// Army list
+.army-list {
+  display: block;
+  padding: 9.5px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.428571429;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: #333333;
+  background-color: whitesmoke;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+// Dashboard
+.icon-container {
+  display: inline;
+  color: #bbb;
+}
+
+.explanation-container {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.subtle {
+  color: #bbb;
+}
+
+// Comments
+.blockquote-box {
+  margin-bottom: 25px
+}
+
+.right-bordered {
+  border-right: 5px solid #E6E6E6;
+  padding-right: 10px;
+}
+
+.left-bordered {
+  border-left: 5px solid #E6E6E6;
+  padding-left: 10px;
+}
+
+.blockquote-box .square {
+  width: 60px;
+  min-height: 60px;
+  text-align: center!important;
+  background-color: #E6E6E6;
+  padding: 15px 0
+}
+
+
+.blockquote-box .square.right-margined {
+  margin-right: 22px;
+}
+
+.blockquote-box .square.left-margined {
+  margin-left: 22px;
+}

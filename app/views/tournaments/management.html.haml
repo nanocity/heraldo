@@ -1,0 +1,47 @@
+.row.bottom-margined
+  .col-md-8
+    %h2.tournament-header
+      = @tournament.title
+  .col-md-4
+    .pull-right
+      = link_to tournament_path( @tournament ), class: 'btn btn-default' do
+        %i.icon-reply
+        Back
+
+.row
+  .col-md-9
+    #accordion.panel-group
+      - @tournament.subscriptions.each do |subscription|
+        .panel.panel-default
+          .panel-heading
+            %h4.panel-title
+              %a{ 'data-toggle' => 'collapse', 'data-parent' => '#accordion', 'href' => "##{subscription.id.to_s}" }
+                %strong
+                  = "##{subscription.identifier}"
+                = subscription.user.name
+              %span.pull-right
+                = subscription_label( subscription.status )
+
+          .panel-collapse.collapse{ id: subscription.id.to_s }
+            .panel-body
+              .col-md-5.army-container
+                = render 'armies', subscription: subscription
+              .col-md-5
+                = render 'comments', subscription: subscription
+              .col-md-2
+                .container
+                  .btn-group-vertical
+                    - if subscription.status != :pending
+                      %button.btn.btn-warning.btn-sm
+                        %i.icon-reply
+                        Pending
+
+                    - if subscription.status != :confirmed
+                      %button.btn.btn-primary.btn-sm
+                        %i.icon-ok
+                        Confirm
+
+                    - if subscription.status != :banned
+                      %button.btn.btn-danger.btn-sm
+                        %i.icon-remove
+                        Ban

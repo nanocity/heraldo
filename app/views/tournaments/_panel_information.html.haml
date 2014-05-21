@@ -1,0 +1,35 @@
+.panel.panel-info
+  .panel-heading
+    %i.icon-map-marker
+    = t( 'heraldo.tournament_info.panel_heading' )
+
+  .panel-body
+    %p
+      %small
+        %strong
+          = "#{t( 'mongoid.attributes.tournament.user' ).capitalize}:"
+        = tournament.user.name
+    %p
+      %small
+        %strong
+          = "#{t( 'mongoid.attributes.tournament.address' ).capitalize}:"
+        = tournament.address
+    %p
+      %small
+        %strong
+          = "#{t( 'mongoid.attributes.tournament.sign_up_date' ).capitalize}:"
+        = I18n.l tournament.sign_up_date
+    %p
+      %small
+        %strong
+          = "#{t( 'mongoid.attributes.tournament.date' ).capitalize}:"
+        = I18n.l tournament.date
+    %p
+      %small
+        %strong
+          = "#{t( 'mongoid.attributes.tournament.max_users' ).capitalize}:"
+        = tournament.max_users
+    %p
+      %small
+        %strong
+          = link_to t( 'mongoid.attributes.tournament.web' ).capitalize, external_link( tournament.web )

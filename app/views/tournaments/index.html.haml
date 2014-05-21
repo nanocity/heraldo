@@ -1,0 +1,11 @@
+%table.table
+  - @tournaments.each do |tournament|
+    %tr
+      %td
+        = tournament.id
+      %td
+        = tournament.title
+      %td
+        = tournament.date
+      %td
+        = tournament.address
