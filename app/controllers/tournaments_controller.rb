@@ -19,7 +19,7 @@ class TournamentsController < ApplicationController
   end
 
   def create
-    @tournament = Tournament.new( create_tournament_params )
+    @tournament = Tournament.new( create_params )
     @tournament.user = current_user
     @tournament.save
 
@@ -30,7 +30,7 @@ class TournamentsController < ApplicationController
   end
 
   def update
-    @tournament.update_attributes( update_tournament_params )
+    @tournament.update_attributes( update_params )
 
     respond_with @tournament
   end
