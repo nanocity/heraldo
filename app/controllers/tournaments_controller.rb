@@ -19,7 +19,7 @@ class TournamentsController < ApplicationController
   end
 
   def create
-    @tournament = Tournament.new( params[:tournament] )
+    @tournament = Tournament.new( create_tournament_params )
     @tournament.user = current_user
     @tournament.save
 
@@ -30,7 +30,7 @@ class TournamentsController < ApplicationController
   end
 
   def update
-    @tournament.update_attributes( params[:tournament] )
+    @tournament.update_attributes( update_tournament_params )
 
     respond_with @tournament
   end
@@ -39,5 +39,15 @@ class TournamentsController < ApplicationController
     @tournament.destroy
 
     respond_with @tournament
+  end
+
+  private
+
+  def create_tournament_params
+    params.require( :tournament ).permit( :title,:date,:sign_up_date,:address,:max_users,:user )
+  end
+
+  def update_tournament_params
+    params.require( :tournament ).permit( :title,:date,:sign_up_date,:address,:max_users )
   end
 end
