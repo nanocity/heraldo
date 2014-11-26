@@ -43,11 +43,11 @@ class TournamentsController < ApplicationController
 
   private
 
-  def create_tournament_params
+  def create_params
     params.require( :tournament ).permit( :title,:date,:sign_up_date,:address,:max_users,:user )
   end
 
-  def update_tournament_params
+  def update_params
     params.require( :tournament ).permit( :title,:date,:sign_up_date,:address,:max_users )
   end
 end

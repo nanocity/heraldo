@@ -11,7 +11,7 @@ gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-twitter'
-gem 'cancan'
+gem 'cancancan'
 
 gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 gem 'mongoid_auto_increment'
