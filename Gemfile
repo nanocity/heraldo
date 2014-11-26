@@ -1,37 +1,37 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.2'
+gem 'rails', '4.1'
 
 # Object Document Mapper
-gem 'mongoid', github: 'mongoid/mongoid'
-gem 'devise', '~> 3.2.2'
-gem 'omniauth', '~> 1.2.1'
-gem 'omniauth-github', '~> 1.1.1'
-gem 'omniauth-google-oauth2', '~> 0.2.2'
-gem 'omniauth-twitter', '~> 1.0.1'
-gem 'cancan', '~> 1.6.10'
+gem 'mongoid'
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-twitter'
+gem 'cancan'
 
-gem 'mongoid-paperclip', '~> 0.0.8', require: 'mongoid_paperclip'
-gem 'mongoid_auto_increment', '~> 0.1.2'
-gem 'validates_timeliness', '~> 3.0.14'
-gem 'dynamic_form', '~> 1.1.4'
+gem 'mongoid-paperclip', require: 'mongoid_paperclip'
+gem 'mongoid_auto_increment'
+gem 'validates_timeliness'
+gem 'dynamic_form'
 
 # Use HAML for views
-gem 'haml-rails', '~> 0.5.2'
-gem 'redcarpet', '~> 3.0.0'
+gem 'haml-rails'
+gem 'redcarpet'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-gem 'bootstrap-sass', '~> 3.0.3.0'
-gem 'font-awesome-sass-rails', '~> 3.0.2.2'
+gem 'sass-rails'
+gem 'bootstrap-sass'
+gem 'font-awesome-sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
-gem 'paloma', '~> 3.0.2'
+gem 'coffee-rails'
+gem 'paloma'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
@@ -43,7 +43,10 @@ gem 'jquery-rails'
 gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.2'
+gem 'jbuilder'
+
+# Heroku Toolbelt
+gem 'heroku'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
