@@ -1,18 +1,5 @@
 .row
   .col-md-8
-    .notification-container
-      %span.icon-container
-        %i.icon-comments.icon-2x
-      %span.explanation-container
-        .subtle
-          %small
-            Hace unos segundos
-        %div
-          = image_tag current_user.avatar, class: 'img-mini'
-          = link_to "Luis Ciudad", root_path
-          se ha inscrito en el torneo
-          = link_to "Torneo de Anima Tactics Andalucia 2014", tournaments_path
-    %hr
   .col-md-4
     - if current_user
       = render 'tournaments_box', tournaments: @tournaments, subscriptions: @subscriptions
